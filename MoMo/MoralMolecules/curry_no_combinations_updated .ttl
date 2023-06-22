@@ -23,7 +23,7 @@ Introduced classes and first attempt of properties, to be defined fixed relation
 
 
 
-Designed by Stefano De Giorgis and Aldo Gangemi.""" .
+Designed by ***.""" .
 
 #################################################################
 #    Annotation properties
