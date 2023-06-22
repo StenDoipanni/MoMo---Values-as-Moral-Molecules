@@ -1,0 +1,57 @@
+### CQ1: "What is the negative counterpart of some moral element?"
+## Note that the folllowing query works only for individuals, so to test it, it would be necessary to add a triple declaring
+## :individual1 momo:hasNegativeCounterpart :individual2 .
+## Automatic possible inferences could be obtained via declaring the type of :individual1 e.g. momo:Fairness and declare the above mentioned triple.
+## Launching the reasoner would result in automatically inferring momo:Unfairness as type of :individual2, and the inverse property:
+## individual2 momo:hasPositiveCouterpart :individual1 .
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?moralElement ?negativeCounterpart
+WHERE { ?moralElement <http://www.ontologydesignpatterns.org/ont/values/CurryMoralMolecules.owl#hasNegativeCounterpart> ?negativeCounterpart .
+}
+
+# -----------------------------------------
+
+### CQ2: "What moral element is based on what cooperation strategy?"
+## Note that the folllowing query works only for individuals, so to test it, it would be necessary to add a triple declaring
+## :individual1 momo:basedOnCooperationStrategy :individual2 .
+## Automatic possible inferences could be obtained via declaring the type of :individual1 e.g. momo:Deference and declare the above mentioned triple.
+## Launching the reasoner would result in automatically inferring momo:Dove as type of :individual2, and the inverse property:
+## individual2 momo:generatesMoralElement :individual1 .
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?moralElement ?cooperationStrategy
+WHERE { ?moralElement <http://www.ontologydesignpatterns.org/ont/values/CurryMoralMolecules.owl#basedOnCooperationStrategy> ?cooperationStrategy .
+}
+
+
+
+### "What are the moral atoms (elements) for some morale molecule?"
+## Note that the folllowing query works only for individuals, so to test it, it would be necessary to add a triple declaring
+## :moralMolecule momo:hasCombinatorialElement :moralElement .
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?moralMolecule ?moralAtom
+WHERE { ?moralMolecule <http://www.ontologydesignpatterns.org/ont/values/CurryMoralMolecules.owl#hasCombinatorialElement> ?moralElement .
+}
+
+
+
+
+
+
